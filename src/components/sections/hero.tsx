@@ -5,6 +5,7 @@ import { portfolioData } from "@/lib/info";
 import { Typewriter } from "@/components/ui/typewriter";
 import { ArrowDown } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Particles from "@/components/ui/particles";
 
 const HeroSection = () => {
   const { scrollY } = useScroll();
@@ -27,6 +28,7 @@ const HeroSection = () => {
       className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
       style={{ opacity }}
     >
+      <Particles className="absolute inset-0 -z-10" />
       <div className="absolute inset-0 animated-background -z-20"></div>
       <div className="absolute inset-0 bg-background/50 -z-10"></div>
       

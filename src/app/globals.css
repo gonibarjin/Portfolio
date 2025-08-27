@@ -63,14 +63,14 @@
 
 @layer utilities {
   .glow-shadow {
-    filter: drop-shadow(0 0 0.75rem hsl(var(--accent) / 0.5));
+    filter: drop-shadow(0 0 0.75rem hsl(var(--primary) / 0.5));
   }
   .glow-shadow-sm {
-    filter: drop-shadow(0 0 0.25rem hsl(var(--accent) / 0.5));
+    filter: drop-shadow(0 0 0.25rem hsl(var(--primary) / 0.5));
   }
   
   .text-glow {
-    text-shadow: 0 0 8px hsl(var(--accent) / 0.75);
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.75);
   }
 
   .animated-background {
