@@ -4,12 +4,8 @@ import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { useTheme } from "next-themes";
-import { portfolioData } from "@/lib/info";
 
 const ParticlesContainer = ({ className }: { className?: string }) => {
-  const { theme } = useTheme();
-
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
