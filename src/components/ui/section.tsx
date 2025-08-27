@@ -12,7 +12,7 @@ interface SectionProps {
 
 export const Section: React.FC<SectionProps> = ({ children, id, className }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: false, threshold: 0.1 });
 
   return (
     <section

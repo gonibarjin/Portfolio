@@ -18,15 +18,9 @@ export function useInView(
     if (!element) return;
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsInView(true);
-        if (once) {
-          observer.unobserve(element);
-        }
-      } else {
-        if (!once) {
-          setIsInView(false);
-        }
+      setIsInView(entry.isIntersecting);
+      if (entry.isIntersecting && once) {
+        observer.unobserve(element);
       }
     }, observerOptions);
 
