@@ -75,6 +75,16 @@
 
   .animated-background {
     background: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.1), transparent 70%);
+    animation: pulse-background 10s infinite alternate;
+  }
+
+  @keyframes pulse-background {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
   }
 
   .section-visible {

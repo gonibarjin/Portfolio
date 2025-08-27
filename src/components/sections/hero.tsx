@@ -28,8 +28,8 @@ const HeroSection = () => {
       className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
       style={{ opacity }}
     >
-      <Particles className="absolute inset-0 -z-10" />
       <div className="absolute inset-0 animated-background -z-20"></div>
+      <Particles className="absolute inset-0 -z-10" />
       <div className="absolute inset-0 bg-background/50 -z-10"></div>
       
       <motion.div style={{ scale, y }} className="transition-transform duration-200">
