@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <motion.section
       id="hero"
-      className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-background"
+      className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
       style={{ opacity }}
     >
       <Particles className="absolute inset-0 -z-10" />
