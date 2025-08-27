@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/sections/projects";
 import ContactSection from "@/components/sections/contact";
 import { portfolioData } from "@/lib/info";
 import { Section } from "@/components/ui/section";
+import ParticlesContainer from "@/components/ui/particles";
 
 const sections = [
   { id: "about", component: <AboutSection /> },
@@ -17,10 +18,11 @@ const sections = [
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ParticlesContainer className="fixed inset-0 -z-10" />
       <Header navItems={portfolioData.navItems} />
       <main className="flex-1">
         <HeroSection />
-        <div className="relative z-10 bg-background">
+        <div className="relative z-10 bg-background/80 backdrop-blur-sm">
           {sections.map((section) => (
             <Section key={section.id} id={section.id}>
               {section.component}

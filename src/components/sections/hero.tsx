@@ -5,7 +5,6 @@ import { portfolioData } from "@/lib/info";
 import { Typewriter } from "@/components/ui/typewriter";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import ParticlesContainer from "@/components/ui/particles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -24,7 +23,6 @@ const HeroSection = () => {
       id="hero"
       className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
-      <ParticlesContainer className="absolute inset-0 -z-10" />
       
       <motion.div className="p-4">
         <motion.h1 
