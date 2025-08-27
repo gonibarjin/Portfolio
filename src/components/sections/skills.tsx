@@ -1,24 +1,5 @@
 import { portfolioData } from "@/lib/info";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import * as TechIcons from "@/components/icons/tech-icons";
-
-const iconMap: { [key: string]: React.ReactNode } = {
-  html: <TechIcons.Html5 />,
-  javascript: <TechIcons.Javascript />,
-  typescript: <TechIcons.Typescript />,
-  react: <TechIcons.React />,
-  nextjs: <TechIcons.Nextjs />,
-  nodejs: <TechIcons.Nodejs />,
-  tailwindcss: <TechIcons.Tailwindcss />,
-  git: <TechIcons.Git />,
-  github: <TechIcons.Github />,
-  figma: <TechIcons.Figma />,
-};
+import { Badge } from "@/components/ui/badge";
 
 const SkillsSection = () => {
   return (
@@ -29,24 +10,12 @@ const SkillsSection = () => {
         </h2>
         <p className="text-muted-foreground mt-2">The technologies and tools I work with.</p>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-        <TooltipProvider>
-          {portfolioData.skills.map((skill) => (
-            <Tooltip key={skill.name}>
-              <TooltipTrigger asChild>
-                <div
-                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-secondary rounded-full border-2 border-transparent transition-all duration-300
-                             cursor-pointer hover:border-accent hover:text-accent hover:glow-shadow-sm text-foreground/80 hover:scale-110"
-                >
-                  <div className="w-8 h-8 md:w-10 md:h-10">{iconMap[skill.id]}</div>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{skill.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          ))}
-        </TooltipProvider>
+      <div className="flex flex-wrap justify-center gap-4">
+        {portfolioData.skills.map((skill) => (
+          <Badge key={skill.id} variant="secondary" className="text-lg px-4 py-2 transition-all hover:bg-primary hover:text-primary-foreground cursor-default">
+            {skill.name}
+          </Badge>
+        ))}
       </div>
     </div>
   );
