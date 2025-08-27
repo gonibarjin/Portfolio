@@ -1,59 +1,69 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import { portfolioData } from "@/lib/info";
 import { Typewriter } from "@/components/ui/typewriter";
 import { ArrowDown } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const HeroSection = () => {
-  const [opacity, setOpacity] = useState(1);
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 200, 500], [1, 0.5, 0]);
+  const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
+  const y = useTransform(scrollY, [0, 500], [0, 200]);
 
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const newOpacity = Math.max(0, 1 - scrollY / 500);
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
-    <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+    <motion.section
+      id="hero"
+      className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+      style={{ opacity }}
+    >
       <div className="absolute inset-0 animated-background -z-20"></div>
       <div className="absolute inset-0 bg-background/50 -z-10"></div>
       
-      <div style={{ opacity }} className="transition-opacity duration-200">
-        <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8">
-          <Image
-            src="https://picsum.photos/400/400"
-            alt="Glowing Laptop"
-            width={400}
-            height={400}
-            className="object-contain glow-shadow"
-            priority
-            data-ai-hint="glowing laptop"
-          />
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+      <motion.div style={{ scale, y }} className="transition-transform duration-200">
+        <motion.h1 
+          className="text-5xl md:text-7xl font-bold tracking-tighter mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           {portfolioData.name}
-        </h1>
+        </motion.h1>
 
-        <div className="text-xl md:text-2xl text-primary font-medium h-8">
+        <motion.div 
+          className="text-xl md:text-2xl text-primary font-medium h-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <Typewriter phrases={portfolioData.hero.taglines} />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
-        style={{ opacity }}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        animate={{
+          y: [0, 10, 0],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
       >
         <ArrowDown className="w-6 h-6 text-muted-foreground" />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
