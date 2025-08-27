@@ -12,6 +12,7 @@ import {
   TypescriptIcon,
 } from "@/components/icons/tech-icons";
 import React from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const iconMap: { [key: string]: React.FC } = {
   html: HtmlIcon,
@@ -35,15 +36,26 @@ const SkillsSection = () => {
         <p className="text-muted-foreground mt-2">The technologies and tools I work with.</p>
       </div>
       <div className="flex flex-wrap justify-center gap-4">
-        {portfolioData.skills.map((skill) => {
-          const IconComponent = iconMap[skill.name.toLowerCase()];
-          return (
-            <Badge key={skill.id} variant="secondary" className="text-lg px-4 py-2 transition-all hover:bg-primary hover:text-primary-foreground cursor-default flex items-center gap-2">
-              {IconComponent && <IconComponent />}
-              <span>{skill.name}</span>
-            </Badge>
-          );
-        })}
+        <TooltipProvider>
+          {portfolioData.skills.map((skill) => {
+            const IconComponent = iconMap[skill.name.toLowerCase()];
+            return (
+              <Tooltip key={skill.id}>
+                <TooltipTrigger asChild>
+                  <Badge
+                    variant="secondary"
+                    className="text-2xl p-3 transition-all hover:bg-primary/20 cursor-pointer"
+                  >
+                    {IconComponent && <IconComponent />}
+                  </Badge>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{skill.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            );
+          })}
+        </TooltipProvider>
       </div>
     </div>
   );
