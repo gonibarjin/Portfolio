@@ -5,7 +5,7 @@ import { portfolioData } from "@/lib/info";
 import { Typewriter } from "@/components/ui/typewriter";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Particles from "@/components/ui/particles";
+import ParticlesContainer from "@/components/ui/particles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -30,7 +30,7 @@ const HeroSection = () => {
       className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
       style={{ opacity }}
     >
-      <Particles className="absolute inset-0 -z-10" />
+      <ParticlesContainer className="absolute inset-0 -z-10" />
       
       <motion.div style={{ scale, y }} className="transition-transform duration-200 p-4">
         <motion.h1 
