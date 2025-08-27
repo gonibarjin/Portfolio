@@ -4,17 +4,12 @@ import React, { useEffect, useState } from "react";
 import { portfolioData } from "@/lib/info";
 import { Typewriter } from "@/components/ui/typewriter";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import ParticlesContainer from "@/components/ui/particles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const HeroSection = () => {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 200, 500], [1, 0.5, 0]);
-  const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
-  const y = useTransform(scrollY, [0, 500], [0, 200]);
-
   const [isMounted, useState] = React.useState(false);
   useEffect(() => {
     useState(true);
@@ -28,11 +23,10 @@ const HeroSection = () => {
     <motion.section
       id="hero"
       className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
-      style={{ opacity }}
     >
       <ParticlesContainer className="absolute inset-0 -z-10" />
       
-      <motion.div style={{ scale, y }} className="transition-transform duration-200 p-4">
+      <motion.div className="p-4">
         <motion.h1 
           className="text-5xl md:text-7xl font-bold tracking-tighter mb-4"
           initial={{ opacity: 0, y: 20 }}
