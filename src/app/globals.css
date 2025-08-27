@@ -73,20 +73,6 @@
     text-shadow: 0 0 8px hsl(var(--primary) / 0.75);
   }
 
-  .animated-background {
-    background: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.25), transparent 70%);
-    animation: pulse-background 10s infinite alternate;
-  }
-
-  @keyframes pulse-background {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.2);
-    }
-  }
-
   .section-visible {
     opacity: 1;
     transform: translateY(0);

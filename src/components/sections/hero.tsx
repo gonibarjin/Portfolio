@@ -15,9 +15,9 @@ const HeroSection = () => {
   const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
   const y = useTransform(scrollY, [0, 500], [0, 200]);
 
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, useState] = React.useState(false);
   useEffect(() => {
-    setIsMounted(true);
+    useState(true);
   }, []);
 
   if (!isMounted) {
@@ -27,12 +27,10 @@ const HeroSection = () => {
   return (
     <motion.section
       id="hero"
-      className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+      className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-background"
       style={{ opacity }}
     >
-      <div className="absolute inset-0 animated-background -z-20"></div>
       <Particles className="absolute inset-0 -z-10" />
-      <div className="absolute inset-0 bg-background/80 -z-10"></div>
       
       <motion.div style={{ scale, y }} className="transition-transform duration-200 p-4">
         <motion.h1 
