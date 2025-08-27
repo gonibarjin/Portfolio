@@ -6,6 +6,7 @@ export const portfolioData = {
       "Creative Problem-Solver",
       "TypeScript Enthusiast",
     ],
+    subtitle: "I build beautiful and reliable web applications from front to back.",
   },
   navItems: [
     { name: "About", href: "#about" },
