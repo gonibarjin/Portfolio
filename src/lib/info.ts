@@ -19,18 +19,16 @@ export const portfolioData = {
     bio: "I am a passionate full-stack developer with a knack for creating dynamic and intuitive web applications. With a foundation in modern technologies like React, Next.js, and Node.js, I enjoy turning complex problems into elegant, user-friendly solutions. I am driven by a constant desire to learn and grow, always exploring new tools and techniques to enhance my craft.",
   },
   skills: [
+    "HTML",
+    "JavaScript",
     "TypeScript",
     "React",
     "Next.js",
     "Node.js",
     "Tailwind CSS",
-    "Prisma",
-    "PostgreSQL",
-    "Docker",
     "Git",
+    "Github",
     "Figma",
-    "Firebase",
-    "GraphQL",
   ],
   projects: [
     {

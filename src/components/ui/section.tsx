@@ -19,7 +19,7 @@ export const Section: React.FC<SectionProps> = ({ children, id, className }) => 
       ref={ref}
       id={id}
       className={cn(
-        'container py-20 md:py-28 transition-all duration-700 ease-out',
+        'container px-8 md:px-16 py-20 md:py-28 transition-all duration-700 ease-out',
         isInView ? 'section-visible' : 'section-hidden',
         className
       )}
