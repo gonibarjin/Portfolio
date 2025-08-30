@@ -8,24 +8,22 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const HeroSection = () => {
-  const [isMounted, useState] = React.useState(false);
+const Hero = () => {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-    useState(true);
+    setMounted(true);
   }, []);
 
-  if (!isMounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   return (
     <motion.section
       id="hero"
       className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
-      
       <motion.div className="p-4">
-        <motion.h1 
+        <motion.h1
           className="text-5xl md:text-7xl font-bold tracking-tighter mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,7 +32,7 @@ const HeroSection = () => {
           {portfolioData.name}
         </motion.h1>
 
-        <motion.div 
+        <motion.div
           className="text-xl md:text-2xl text-primary font-medium h-8 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +40,7 @@ const HeroSection = () => {
         >
           <Typewriter phrases={portfolioData.hero.taglines} />
         </motion.div>
-        
+
         <motion.p
           className="max-w-xl mx-auto text-muted-foreground md:text-lg mt-6"
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +49,7 @@ const HeroSection = () => {
         >
           {portfolioData.hero.subtitle}
         </motion.p>
-        
+
         <motion.div
           className="mt-8 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
@@ -84,4 +82,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;
