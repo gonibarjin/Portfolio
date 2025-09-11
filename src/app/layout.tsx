@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Neonfolio | A Developer's Portfolio",
-  description: "A modern, neon-themed portfolio for a creative developer.",
+  title: "Mehran Ahmadnia Portfolio",
+  description: "A modern, neon-themed portfolio for a Front-End developer.",
 };
 
 export default function RootLayout({
@@ -16,8 +16,15 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-body antialiased bg-background">
         {children}

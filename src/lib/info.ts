@@ -17,7 +17,7 @@ export const portfolioData = {
   ],
   about: {
     imageUrl: "/mere.jpeg",
-    bio: "I am a frontend developer passionate about creating clean, user-friendly, and modern web applications. With a strong foundation in React, Next.js, and TypeScript, I enjoy turning complex ideas into intuitive digital experiences. I am continuously learning and refining my skills to stay on top of the ever-evolving web development landscape.",
+    bio: "Frontend development quickly became the place where everything clicked for me. What excites me most is the mix of creativity and logic, the satisfaction of seeing something take shape as I build it, and the joy of creating experiences that others can actually use. I’m curious by nature and enjoy experimenting, always looking for new ways to learn and grow. For me, frontend is not just about code, but about putting care and passion into details that make a difference",
   },
   skills: [
     { id: "html", name: "HTML" },
@@ -37,8 +37,18 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "Circulair",
+      description:
+        " A React based production-ready landing page based on Figma mockups for a client called Circulaire",
+      imageUrl: "/circ.png",
+      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+      githubUrl: "https://github.com/antxhan/circulaire",
+      liveUrl: "https://circulaire.vercel.app/",
+    },
+    {
       title: "General Quiz",
-      description: "A simple quiz application built with React, allowing users to answer questions interactively.",
+      description:
+        "A simple quiz application built with React, allowing users to answer questions interactively.",
       imageUrl: "/quiz.png",
       technologies: ["React", "HTML", "CSS"],
       githubUrl: "https://github.com/gonibarjin/React-Quiz",
@@ -47,27 +57,23 @@ export const portfolioData = {
 
     {
       title: "Movie Magic",
-      description: "A React-based movie search app that lets users explore films, save them to a personal list, and add ratings.",
+      description:
+        "A React-based movie search app that lets users explore films, save them to a personal list, and add ratings.",
       imageUrl: "/movie.png",
       technologies: ["React", "HTML", "CSS"],
       githubUrl: "https://github.com/TehFat/Group-9",
       liveUrl: "https://whimsical-bunny-38ec3b.netlify.app",
     },
-
-    {
-      title: "Circulair",
-      description: " A React based production-ready landing page based on Figma mockups for a client called Circulaire",
-      imageUrl: "/circ.png",
-      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-      githubUrl: "https://github.com/antxhan/circulaire",
-      liveUrl: "https://circulaire.vercel.app/",
-    }
   ],
   contact: {
     email: "Mehranstockholm@gmail.com",
     socials: [
       { name: "GitHub", url: "https://github.com/gonibarjin", icon: "github" },
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/mehran-ahmadnia-50638535b/", icon: "linkedin" },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/mehran-ahmadnia-50638535b/",
+        icon: "linkedin",
+      },
     ],
   },
   resumeUrl: "/resume.pdf", // Place your resume file in your public/ folder to make this work
